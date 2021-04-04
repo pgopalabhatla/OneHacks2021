@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>FitMe | Workout</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="css/style2.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <div class="nv-nav cover2">
+    <img src="pics/logo.png" alt="Logo" class="logo">
+    <ul class="main-nav">
+      <li><a href="workout.html">Workout</a></li>
+      <li class="logged-out"><a href = "#" class="modal-trigger" data-target="modal-login">Log In</a></li>
+      <li class="logged-out"><a href = "#" class="modal-trigger" data-target="modal-signup">Sign Up</a></li> 
+      <li class="logged-in"><a href="editaccount.html">Account</a></li>
+      <li class="logged-in"><a href = "#" class="modal-trigger" data-target="modal-logout" id="logout">Log Out</a></li> 
+  </ul>
+    <!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:25px">
+  <p style="font-size: 90px; display:flex; flex-wrap:wrap; justify-content:center; color: #d35400">Workout Types</p> 
+  <br/><br/>
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <a href="recommended.html?type=upper-body"> <img src="images/upper-body.jpg" alt="Upper Body" style="height: 200px; padding: 15px"> 
+      <h1>Upper Body</h1>
+      <p style="font-size: 20px; color: #f39c12; margin-top:6%;">Great for getting that perfect posture, weight loss, and strength!</p></a>
+    </div>
+    <div class="w3-quarter">
+      <a href="recommended.html?type=lower-body"> <img src="images/lower-body.jpeg" alt="Lower Body" style="height: 200px; padding: 15px">
+      <h1>Lower Body</h1>
+      <p style="font-size: 20px; color: #f39c12; margin-top:6%;">Great for increasing stamina, balance, and agility!</p> </a>
+    </div>
+    <div class="w3-quarter">
+      <a href="recommended.html?type=cardio"> <img src="images/cardio.webp" alt="Cardio" style="height: 200px; padding: 15px">
+      <h1>Cardio</h1>
+      <p style="font-size: 20px; color: #f39c12; margin-top:6%;">Great for lowering blood pressure, reducing chronic pain, and strengthening your immune system!</p></a>
+    </div>
+    <div class="w3-quarter">
+      <a href="recommended.html?type=core"> <img src="images/core.jpg" alt="Core" style="height: 200px; width: 250px; padding: 15px">
+      <h1>Core</h1>
+      <p style="font-size: 20px; color: #f39c12; margin-top:6%;">Great for improving stability and toning your abs!</p></a>
+    </div>
+  </div>
+  </div>
+</div>
+
+<section id = "schedule-wrapper" class = "black">
+  <h3>Schedule</h3>
+  <div id="new">
+    <p>Create an auto-generated schedule as a starting point for your fitness journey!</p>
+    <a href="#" data-target="modal-schedule" class="nv-btn nv-btn-full modal-trigger">Let's Do It!</a>
+  </div>
+  <div id = "made" class="hide">
+    <table id = "schedule">
+      <thead>
+        <tr id = "table-head">
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            
+          </ul>
+        </td>
+        <td>
+          <ul>
+            
+          </ul>
+        </td><td>
+          <ul>
+            
+          </ul>
+        </td><td>
+          <ul>
+            
+          </ul>
+        </td><td>
+          <ul>
+            
+          </ul>
+        </td><td>
+          <ul>
+            
+          </ul>
+        </td>
+        <td>
+          <ul>
+            
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  <br><br>
+  <p id="split" class="hide">Alternate between upper and lower on each strength day.</p>
+</section>
+  
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-section">
+        <h5><b>About Us</b></h5>
+        <p>This website was created by Andy Zhang, Nivedha Srinivasan, Hazem Zaky, and Ben Knobloch for NHacks 2020.</p>
+    </div>
+    <div class="footer-section">
+        <h5><b>Contact Us</b></h5>
+        <ul>
+          <li><a class="black-text" href="mailto:nisrinivasan@ctemc.org">Email Nivedha</a></li>
+          <li><a class="black-text" href="mailto:hazaky@ctemc.org">Email Hazem</a></li>
+          <li><a class="black-text" href="mailto:beknobloch@ctemc.org">Email Andy</a></li>
+          <li><a class="black-text" href="mailto:andyzhang@ctemc.org">Email Benjamin</a></li>
+        </ul>
+    </div>
+</footer>
+
+       <!--MODALS-->
+        <!--SIGN UP MODAL: pops up when sign in is clicked-->
+        <div id="modal-signup" class="modal">
+          <div class="modal-content">
+            <h4>Sign up</h4><br />
+            <form id="signup-form">
+              <div class="input-field">
+                <input type="email" id="signup-email" required />
+                <label for="signup-email">Email address</label>
+              </div>
+              <div class="input-field">
+                <input type="password" id="signup-password" required />
+                <label for="signup-password">Choose password</label>
+              </div>
+              <div class="input-field">
+                <input type="text" id="signup-name" required />
+                <label for="signup-name">Full name</label>
+              </div>
+              <label>Intensity Level</label>
+              <p>
+                <label>
+                  <input id="beginner" class="with-gap" name="signup-level" type="radio" value="0"/>
+                  <span class="selector-label">Beginner</span>
+                </label>
+                <label>
+                  <input id="intermediate" class="with-gap" name="signup-level" type="radio" value="1"/>
+                  <span class="selector-label">Intermediate</span>
+                </label>
+                <label>
+                  <input id="advanced" class="with-gap" name="signup-level" type="radio" value="2"/>
+                  <span class="selector-label">Advanced</span>
+                </label>
+              </p>
+              <br/>
+              <label>How much do you excercise in a day?</label>
+              <p>
+                <label>
+                  <input id="little" class="with-gap" name="signup-time" type="radio" value="0"/>
+                  <span class="selector-label">A Little</span>
+                </label>
+                <label>
+                  <input id="average" class="with-gap" name="signup-time" type="radio" value="1"/>
+                  <span class="selector-label">An average amount</span>
+                </label>
+                <label>
+                  <input id="lot" class="with-gap" name="signup-time" type="radio" value="2"/>
+                  <span class="selector-label">A Lot</span>
+                </label>
+              </p>
+              <br>
+              <label>Where do you prefer to exercise?</label>
+              <p>
+                <label>
+                  <input id="inside" class="with-gap" name="space" type="checkbox" value="indoors" />
+                  <span class="selector-label">Inside</span>
+                </label>
+                <label>
+                  <input id="outside" class="with-gap" name="space" type="checkbox" value="outdoors" />
+                  <span class="selector-label">Outside</span>
+                </label>
+                <label>
+                  <input id="gym" class="with-gap" name="space" type="checkbox" value="gym" />
+                  <span class="selector-label">In a gym</span>
+                </label>
+              </p>
+              <br>
+              <label>What equipment do you have on hand?</label>
+              <p>
+                <label>
+                  <input id="treadmill" class="with-gap" name="equipment" type="checkbox" value="treadmill" />
+                  <span class="selector-label">Treadmill</span>
+                </label>
+                <label>
+                  <input id="Jump-rope" class="with-gap" name="equipment" type="checkbox" value="jump-rope" />
+                  <span class="selector-label">Jump-rope</span>
+                </label>
+                <label>
+                  <input id="stairs" class="with-gap" name="equipment" type="checkbox" value="stairs" />
+                  <span class="selector-label">Stairs</span>
+                </label>
+                <label>
+                  <input id="stair-climber" class="with-gap" name="equipment" type="checkbox" value="stair-climber" />
+                  <span class="selector-label">Stair-climber</span>
+                </label>
+                <label>
+                  <input id="weights" class="with-gap" name="equipment" type="checkbox" value="weights" />
+                  <span class="selector-label">Weights</span>
+                </label>
+                <label>
+                  <input id="pull-up-bar" class="with-gap" name="equipment" type="checkbox" value="pull-up bar" />
+                  <span class="selector-label">Pull-up bar</span>
+                </label>
+                <label>
+                  <input id="pool" class="with-gap" name="equipment" type="checkbox" value="pool" />
+                  <span class="selector-label">Pool</span>
+                </label>
+                <label>
+                  <input id="ocean" class="with-gap" name="equipment" type="checkbox" value="ocean" />
+                  <span class="selector-label">Ocean</span>
+                </label>
+                <label>
+                  <input id="bicycle" class="with-gap" name="equipment" type="checkbox" value="bicycle" />
+                  <span class="selector-label">Bicycle</span>
+                </label>
+                <label>
+                  <input id="punching-equipment" class="with-gap" name="equipment" type="checkbox" value="punching gloves and bag" />
+                  <span class="selector-label">Punching gloves and bag</span>
+                </label>
+              </p>
+              <br/><br/>
+              <button class="btn lavender darken-2 z-depth-0">Sign up</button>
+            </form>
+          </div>
+        </div>
+      
+        <!-- LOGIN MODAL: pops up when login is clicked -->
+        <div id="modal-login" class="modal">
+          <div class="modal-content">
+            <h4>Login</h4><br />
+            <form id="login-form">
+              <div class="input-field">
+                <input type="email" id="login-email" required />
+                <label for="login-email">Email address</label>
+              </div>
+              <div class="input-field">
+                <input type="password" id="login-password" required />
+                <label for="login-password">Your password</label>
+              </div>
+              <button class="btn lavender darken-2 z-depth-0">Login</button>
+            </form>
+          </div>
+       </div>
+
+<!-- SCHEDULE MODAL: pops up when button is clicked -->
+<div id="modal-schedule" class="modal">
+  <div class="modal-content">
+    <h4>Just one thing</h4><br/>
+    <form id="schedule-form">
+        <h6>Which days can you workout?</h6>
+        <br>
+        <p>
+          <label>
+            <input id="Monday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Monday</span>
+          </label>
+          <label>
+            <input id="Tuesday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Tuesday</span>
+          </label>
+          <label>
+            <input id="Wednesday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Wednesday</span>
+          </label>
+          <label>
+            <input id="Thursday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Thursday</span>
+          </label>
+          <label>
+            <input id="Friday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Friday</span>
+          </label>
+          <label>
+            <input id="Saturday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Saturday</span>
+          </label>
+          <label>
+            <input id="Sunday" class="with-gap" name="days" type="checkbox"/>
+            <span class="selector-label">Sunday</span>
+          </label>
+        </p>
+        <br><br>
+        <h6>What type of workouts do you want?</h6>
+        <br>
+        <p>
+          <label>
+            <input id="Strength" class="with-gap" name="work" type="radio"/>
+            <span class="selector-label">Strength</span>
+          </label>
+          <label>
+            <input id="Cardio" class="with-gap" name="work" type="radio"/>
+            <span class="selector-label">Cardio</span>
+          </label>
+          <label>
+            <input id="Both" class="with-gap" name="work" type="radio"/>
+            <span class="selector-label">Both</span>
+          </label>
+        </p>
+        <br><br>
+      <button class="btn lavender darken-2 z-depth-0 schedule-button" type="button" >Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- End page content -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+  var modals = document.querySelectorAll('.modal');
+  M.Modal.init(modals);
+
+  var items = document.querySelectorAll('.collapsible');
+  M.Collapsible.init(items);
+
+  });
+</script>
+
+<script src="js/materialize.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhCfldT_zbbAK8Jl6usEtYbC6rEhnbTE8",
+    authDomain: "nhacks-671d0.firebaseapp.com",
+    databaseURL: "https://nhacks-671d0.firebaseio.com",
+    projectId: "nhacks-671d0",
+    storageBucket: "nhacks-671d0.appspot.com",
+    messagingSenderId: "658368861026",
+    appId: "1:658368861026:web:1a5f4bda10c4b0be3cd23b",
+    measurementId: "G-5GNWK6YYMX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+</script>
+
+<script src="js/data.js"></script>
+
+<script src="js/auth.js"></script>
+<script src="js/index.js"></script>
+<script src="js/queries.js"></script>
+<script src="js/recommended.js" ></script>
+<script src="js/schedules.js"></script>
+
+</body>
+</html>
