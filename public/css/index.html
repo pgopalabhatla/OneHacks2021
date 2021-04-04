@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html id="index"  lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>FitMe</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        
+    </head>
+    <body>
+        <div class="nv-cover">
+            <!--NAVBAR (different for homepage)-->
+            <div class="nv-nav">
+                <img src="pics/logo.png" alt="Logo" class="logo">
+                <ul class="main-nav">
+                    <li class="logged-in"><a href="workout.html">Workout</a></li>
+                    <li class="logged-out"><a href = "#" class="modal-trigger" data-target="modal-login">Log In</a></li>
+                    <li class="logged-out"><a href = "#" class="modal-trigger" data-target="modal-signup">Sign Up</a></li> 
+                    <li class="logged-in"><a href = "editaccount.html">Account</a></li> 
+                    <li class="logged-in"><a href = "#" class="modal-trigger" data-target="modal-logout" id="logout">Log Out</a></li> 
+                </ul>
+            </div>
+            <!--TITLE AND TAGLINE-->
+            <div class="text">
+                <h1>FitMe.</h1>
+                <h3>Build your next workout. <br> Fast, free, easy. </h3>
+                <a href="#" a href = "#" data-target="modal-signup" class="modal-trigger nv-btn nv-btn-full">Shape Up!</a>
+                <a href="#about" class="nv-btn nv-btn-ghost">Learn more</a>
+            </div>
+        </div>
+        <div class="banner-fit">
+            <div class="about-box">
+                <img src="pics/target.png" class="about-icon">
+                <h6>TARGETED <br> WORKOUTS</h6>
+            </div>
+            <div class="about-box">
+                <img src="pics/user.png" class="about-icon">
+                <h6>USER <br> FOCUSED</h6>
+            </div>
+            <div class="about-box" style="border:none">
+                <img src="pics/check.png" class="about-icon">
+                <h6>EASY TO <br> USE</h6>
+            </div>
+            <div class="about-box" style="border:none">
+                <img src="pics/lock.png" class="about-icon">
+                <h6>SAFE <br> SECURE</h6>
+            </div>
+
+        </div>
+        <div class="about-fit" id="about">
+            <!--targeted workouts, user focused, easy to use?-->
+            <div class="center">
+                <div class="about-page">
+                    <h4>About</h4>
+                    <p>Due to COVID-19, many of us have been forced to quarantine ourselves, 
+                        staying in our homes for months with nothing to do. It can be hard to find
+                        motivation to be productive. However, there is no better time to work out 
+                        and get in shape! MyFit provides users with schedules and exercises 
+                        so that they can get started on their fitness journey.
+                    </p>
+                </div>
+                <div class="about-page">
+                    <h4>How To Use</h4>
+                    <p>MyFit is extremely easy to use. Simply click sign up and enter your basic 
+                        information and preferences (workout intensity, time, etc.). After you sign up, 
+                        you will be taken to a workout page where you can create a schedule for yourself
+                        and access recommended workouts for you based on the preferences you choose. You can access
+                        this information again when you log in.</p>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <div class="footer-section">
+                <h5><b>About Us</b></h5>
+                <p>This website was created by Andy Zhang, Nivedha Srinivasan, Hazem Zaky, and Ben Knobloch for NHacks 2020.</p>
+            </div>
+            <div class="footer-section">
+                <h5><b>Contact Us</b></h5>
+                <ul>
+                  <li><a class="black-text" href="mailto:nisrinivasan@ctemc.org">Email Nivedha</a></li>
+                  <li><a class="black-text" href="mailto:hazaky@ctemc.org">Email Hazem</a></li>
+                  <li><a class="black-text" href="mailto:beknobloch@ctemc.org">Email Andy</a></li>
+                  <li><a class="black-text" href="mailto:andyzhang@ctemc.org">Email Benjamin</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!--MODALS-->
+        <!--SIGN UP MODAL: pops up when sign in is clicked-->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+              <h4>Sign up</h4><br />
+              <form id="signup-form">
+                <div class="input-field">
+                  <input type="email" id="signup-email" required />
+                  <label for="signup-email">Email address</label>
+                </div>
+                <div class="input-field">
+                  <input type="password" id="signup-password" required />
+                  <label for="signup-password">Choose password</label>
+                </div>
+                <div class="input-field">
+                  <input type="text" id="signup-name" required />
+                  <label for="signup-name">Full name</label>
+                </div>
+                <label>Intensity Level</label>
+                <p>
+                  <label>
+                    <input id="beginner" class="with-gap" name="signup-level" type="radio" value="0"/>
+                    <span class="selector-label">Beginner</span>
+                  </label>
+                  <label>
+                    <input id="intermediate" class="with-gap" name="signup-level" type="radio" value="1"/>
+                    <span class="selector-label">Intermediate</span>
+                  </label>
+                  <label>
+                    <input id="advanced" class="with-gap" name="signup-level" type="radio" value="2"/>
+                    <span class="selector-label">Advanced</span>
+                  </label>
+                </p>
+                <br/>
+                <label>How much do you excercise in a day?</label>
+                <p>
+                  <label>
+                    <input id="little" class="with-gap" name="signup-time" type="radio" value="0"/>
+                    <span class="selector-label">A Little</span>
+                  </label>
+                  <label>
+                    <input id="average" class="with-gap" name="signup-time" type="radio" value="1"/>
+                    <span class="selector-label">An average amount</span>
+                  </label>
+                  <label>
+                    <input id="lot" class="with-gap" name="signup-time" type="radio" value="2"/>
+                    <span class="selector-label">A Lot</span>
+                  </label>
+                </p>
+                <br>
+                <label>Where do you prefer to exercise?</label>
+                <p>
+                  <label>
+                    <input id="inside" class="with-gap" name="space" type="checkbox" value="indoors" />
+                    <span class="selector-label">Inside</span>
+                  </label>
+                  <label>
+                    <input id="outside" class="with-gap" name="space" type="checkbox" value="outdoors" />
+                    <span class="selector-label">Outside</span>
+                  </label>
+                  <label>
+                    <input id="gym" class="with-gap" name="space" type="checkbox" value="gym" />
+                    <span class="selector-label">In a gym</span>
+                  </label>
+                </p>
+                <br>
+                <label>What equipment do you have on hand?</label>
+                <p>
+                  <label>
+                    <input id="treadmill" class="with-gap" name="equipment" type="checkbox" value="treadmill" />
+                    <span class="selector-label">Treadmill</span>
+                  </label>
+                  <label>
+                    <input id="Jump-rope" class="with-gap" name="equipment" type="checkbox" value="jump-rope" />
+                    <span class="selector-label">Jump-rope</span>
+                  </label>
+                  <label>
+                    <input id="stairs" class="with-gap" name="equipment" type="checkbox" value="stairs" />
+                    <span class="selector-label">Stairs</span>
+                  </label>
+                  <label>
+                    <input id="stair-climber" class="with-gap" name="equipment" type="checkbox" value="stair-climber" />
+                    <span class="selector-label">Stair-climber</span>
+                  </label>
+                  <label>
+                    <input id="weights" class="with-gap" name="equipment" type="checkbox" value="weights" />
+                    <span class="selector-label">Weights</span>
+                  </label>
+                  <label>
+                    <input id="pull-up-bar" class="with-gap" name="equipment" type="checkbox" value="pull-up bar" />
+                    <span class="selector-label">Pull-up bar</span>
+                  </label>
+                  <label>
+                    <input id="pool" class="with-gap" name="equipment" type="checkbox" value="pool" />
+                    <span class="selector-label">Pool</span>
+                  </label>
+                  <label>
+                    <input id="ocean" class="with-gap" name="equipment" type="checkbox" value="ocean" />
+                    <span class="selector-label">Ocean</span>
+                  </label>
+                  <label>
+                    <input id="bicycle" class="with-gap" name="equipment" type="checkbox" value="bicycle" />
+                    <span class="selector-label">Bicycle</span>
+                  </label>
+                  <label>
+                    <input id="punching-equipment" class="with-gap" name="equipment" type="checkbox" value="punching gloves and bag" />
+                    <span class="selector-label">Punching gloves and bag</span>
+                  </label>
+                </p>
+                <br/><br/>
+                <button class="btn lavender darken-2 z-depth-0">Sign up</button>
+              </form>
+            </div>
+          </div>
+        
+          <!-- LOGIN MODAL: pops up when login is clicked -->
+          <div id="modal-login" class="modal">
+            <div class="modal-content">
+              <h4>Login</h4><br />
+              <form id="login-form">
+                <div class="input-field">
+                  <input type="email" id="login-email" required />
+                  <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                  <input type="password" id="login-password" required />
+                  <label for="login-password">Your password</label>
+                </div>
+                <button class="btn lavender darken-2 z-depth-0">Login</button>
+              </form>
+            </div>
+         </div>
+
+        <!--SCRIPTS-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhCfldT_zbbAK8Jl6usEtYbC6rEhnbTE8",
+    authDomain: "nhacks-671d0.firebaseapp.com",
+    databaseURL: "https://nhacks-671d0.firebaseio.com",
+    projectId: "nhacks-671d0",
+    storageBucket: "nhacks-671d0.appspot.com",
+    messagingSenderId: "658368861026",
+    appId: "1:658368861026:web:1a5f4bda10c4b0be3cd23b",
+    measurementId: "G-5GNWK6YYMX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+</script>
+        <script src="js/auth.js"></script>
+        <script src="js/queries.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/schedules.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+    </body>
+    
+</html>
